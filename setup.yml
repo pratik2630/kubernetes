@@ -2,7 +2,7 @@
   roles:
 
           - role: k8s_master
-            when: inventory_hostname in groups['master']
+            when: inventory_hostname in groups['tag_name_k8s_master']
           - role: k8s_worker
-            when: inventory_hostname in groups['worker']
+            when: inventory_hostname in groups['tag_name_k8s_worker']
           - role: join_cluster

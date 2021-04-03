@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - aws_ec2
+    - instance_launch

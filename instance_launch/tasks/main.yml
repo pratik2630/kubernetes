@@ -1,0 +1,32 @@
+- name: launching k8s_master instance over the aws
+  ec2:
+                  region: us-east-1
+                  image: ami-0be2609ba883822ec
+                  instance_type: t2.micro
+                  assign_public_ip: yes
+                  vpc_subnet_id: subnet-05a6421b137ef40bd
+                  group: mysecuritygroup
+                  key_name: mykeyaws
+                  instance_tags:
+                          name: k8s_master
+                  state: present
+                  aws_access_key: "{{ access_key }}"
+                  aws_secret_key: "{{ secret_key }}"
+
+- name: launching 2 worker nodes over the aws 
+  ec2:
+                  region: us-east-1
+                  image: ami-0be2609ba883822ec
+                  instance_type: t2.micro
+                  assign_public_ip: yes
+                  vpc_subnet_id: subnet-05a6421b137ef40bd
+                  group: mysecuritygroup
+                  key_name: mykeyaws
+                  instance_tags:
+                          name: k8s_worker
+                  state: present
+                  count: 2
+                  aws_access_key: "{{ access_key }}"
+                  aws_secret_key: "{{ secret_key }}"
+
+  
