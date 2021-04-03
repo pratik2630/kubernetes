@@ -8,7 +8,7 @@
                   group: mysecuritygroup
                   key_name: mykeyaws
                   instance_tags:
-                          name: k8s_master
+                          Name: k8s_master
                   state: present
                   aws_access_key: "{{ access_key }}"
                   aws_secret_key: "{{ secret_key }}"
@@ -23,7 +23,7 @@
                   group: mysecuritygroup
                   key_name: mykeyaws
                   instance_tags:
-                          name: k8s_worker
+                          Name: k8s_worker
                   state: present
                   count: 2
                   aws_access_key: "{{ access_key }}"
